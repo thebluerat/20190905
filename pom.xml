@@ -4,6 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>rat.blue</groupId>
 	<artifactId>the</artifactId>
+	<!-- 프로젝트 이름 -->
 	<name>temporary</name>
 	<packaging>war</packaging>
 	<version>1</version>
