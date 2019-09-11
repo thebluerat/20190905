@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name = "viewport" content = "width=device-width, initial-scale=1">
+		<title>게시판</title>
+		
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	
+		<script type = "text/javascript">
+			$(document).ready(function(){
+				var storage = [];
+				var i = 1;
+				
+				$("form").submit(function(e){
+					e.preventDefault();
+					if($(this).attr("id") == "login"){
+						$("#myModal").modal("hide");
+					}
+			});
+				
+			$("#edit button: button").on("click", function(){
+				$("#update").addClass("disabled");
+				$("#delete").addClass("disabled");
+				switch ($("#edit button:button").index(this)){
+				case 0:
+					createEvent();
+					break;
+				case 1:
+					editEvent("update");
+					break;
+				case 2:
+					editEvent("delete");
+					break;
+				default:
+					alert("5류...");
+				break;
+				}
+			});
+			
+			function createHtml(){
+				get();
+				$("tbody").empty();
+				$("#text").val("");
+				for(var j = 0; j < storage.length; j++){
+					var tag = '<tr>' +
+								'<td><input type = "checkbox"></td>' +
+								'<td>' + storage[j].no + '</td>' +
+								'<td>' + storage[j].text + '</td>' +
+								'</tr>';
+					$("tbody").append(tag);
+				}
+				
+				if(storage.length > 0){
+					
+					i = storage.length + 1;
+					
+				}
+			}
+			
+			}
+		</script>
+	
+	
+	</head>
+	
+	
+	<body>
+	
+	</body>
+</html>
