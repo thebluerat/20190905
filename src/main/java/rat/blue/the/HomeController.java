@@ -27,7 +27,7 @@ public class HomeController {
 	@RequestMapping("/")
 	public String home(HttpServletRequest req) {
 		req.setAttribute("list", list);
-		return "home";
+		return "board";
 	}
 	
 	@RequestMapping("/add")
